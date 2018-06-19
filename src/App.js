@@ -50,46 +50,7 @@ class App extends Component {
     })
   }
 
-  // calculateFaceLocation = (data) => {
-  //   const clarifyFace = data.outputs[0].data.regions[0].region_info.bounding_box;
-  //   const image = document.getElementById('inputimage');
-  //   const width = Number(image.width);
-  //   const height = Number(image.height);
-  //   console.log(width, height);
-  //   return {
-  //     leftCol: clarifyFace.left_col * width,
-  //     topRow: clarifyFace.top_row * height,
-  //     rightCol: width - (clarifyFace.right_col * width),
-  //     bottomRow: height - (clarifyFace.bottom_row * height)
 
-  //   }
-  // }
-  // calculateFaceLocation = (data) => {
-  //   let clarifaiFaces = [];
-  //   if (data.outputs[0].data.regions !== null) {
-  //     for (let i = 0; i < data.outputs[0].data.regions.length; i++) {
-  //       clarifaiFaces.push(data.outputs[0].data.regions[i].region_info.bounding_box)
-  //     }
-  //   }
-  //   console.log('#of faces' + clarifaiFaces.length);
-  //   const image = document.getElementById('inputimage');
-  //   const width = Number(image.width);
-  //   const height = Number(image.height);
-  //   let boxes = [];
-
-  //   for (var i = 0; i < clarifaiFaces.length; i++) {
-  //     let box = {
-  //       leftCol: clarifaiFaces[i].left_col * width,
-  //       topRow: clarifaiFaces[i].top_row * height,
-  //       rightCol: width - (clarifaiFaces[i].right_col * width),
-  //       bottomRow: height - (clarifaiFaces[i].bottom_row * height)
-  //     }
-  //     boxes.push(box);
-  //   }
-  //   //  const clarifyFace = data.outputs[0].data.regions[0].region_info.bounding_box;
-
-  //   return boxes;
-  // }
   calculateFaceLocation = (data) => {
     let faces = [];
     if (data.outputs[0].data.regions !== null) {
@@ -126,10 +87,7 @@ class App extends Component {
     console.log(boxes);
     this.setState({ box: boxes });
   }
-  // displayFaceBox = (box) => {
-  //   console.log(box);
-  //   this.setState({ box: box });
-  // }
+
   onInputChange = (event) => {
     this.setState({ input: event.target.value });
   }
